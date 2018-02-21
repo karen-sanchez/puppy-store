@@ -1,0 +1,17 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "Simple & light e-commerce site.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karen Sanchez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "unsplash-api": "^1.2.0"
+  }
+}

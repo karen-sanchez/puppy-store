@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<div class="container">
+	<div class="carousel-images">
+		<% photos.forEach(function(photos){ %>
+			<img src="<%= photos.urls.regular %>" class="modal-img d-none" alt="carousel-img" />
+		 <% }) %>
+	</div>
+    <!-- CAROUSEL -->
+    <div class="container">
+		<div id="puppy-carousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators"></ol>
+			<div class="carousel-inner"></div>
+			<!-- Controls -->
+			<a class="carousel-control-prev" href="#puppy-carousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#puppy-carousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<br />
+	<div class="container">
+		<div class="bd-example-container-body"></div>
+	</div>
+	<br />
+	<div class="container">
+		<div class="bd-example-container-body"></div>
+	</div>
+	<br />
+	<div class="container">
+		<div class="bd-example-container-body"></div>
+	</div>
+	<br />
+	<div class="container">
+		<ul class="list-group">
+		  <li class="list-group-item disabled">Cras justo odio</li>
+		  <li class="list-group-item">Dapibus ac facilisis in</li>
+		  <li class="list-group-item">Morbi leo risus</li>
+		  <li class="list-group-item">Porta ac consectetur ac</li>
+		  <li class="list-group-item">Vestibulum at eros</li>
+		</ul>
+	</div>
+</div>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+<% include ../partials/scripts %>
+
+</body>
+</html>
+
+
+
+
+

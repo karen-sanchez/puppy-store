@@ -1,0 +1,7 @@
+.bd-example-container-body {
+	height: 8rem;
+    margin-right: 4.5rem;
+    background-color: #957bbe;
+    border-radius: .25rem;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon { background-color: green; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<div class="container">
+	<% photos.forEach(function(photos){ %>
+	<div class="product-info">
+		<a data-toggle="modal" class="modal-btn" href=".puppy-modal">
+			<img src="<%= photos.urls.small %>" style="max-width:300px;" alt="product-img" />
+		</a>
+		<ul>
+			<li>Name: <strong><%= photos.user.first_name %></strong></li>
+			<li>Price: <strong>$<%= photos.likes %></strong></li>
+			<li class="utm"><a href="<%= photos.user.links.html %>">Photo credit</a></li>
+			<a href="<%= photos.urls.regular %>" class="modal-img d-none"></a>
+		</ul>
+	</div>
+	 <% }) %>
+</div>
+
+<!-- modal -->
+<div  class="modal fade puppy-modal" tabindex="-1" role="dialog" aria-labelledby="puppy-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    	<img style="max-width: 100%;">
+    </div>
+  </div>
+</div>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+<% include ../partials/scripts %>
+
+</body>
+</html>
+
