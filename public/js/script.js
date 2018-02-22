@@ -6,7 +6,8 @@ $(document).ready(function(){
 	var picsArray = [],
 		imgCreditArray = [],
 		imgFnameArray = [],
-		imgLnameArray = [];
+		imgLnameArray = [],
+		utm = '?utm_source=puppy_store&utm_medium=referral';
 
 	// filter returned images by size, then push into picsArray
 	$('.carousel-images').each(function() {  
@@ -30,7 +31,7 @@ $(document).ready(function(){
 		var image = '<div class="carousel-item">' +
 					'<img src=" '+ picsArray[i] +' ">' +
 					'<div class="carousel-caption d-none d-md-block">' +
-					'<p>Photo by: </p><a href="'+ imgCreditArray[i] +'">'+ imgFnameArray[i] + ' ' + imgLnameArray[i] +'</a>'+
+					'<p>Photo by: </p><a href="'+ imgCreditArray[i] + utm +'">'+ imgFnameArray[i] + ' ' + imgLnameArray[i] +'</a>'+
 					'</div>'+
 					'</div>',
 			indicators = '<li data-target="#puppy-carousel" data-slide-to="'+i+'"></li>';
@@ -56,10 +57,9 @@ $(document).ready(function(){
 
 	$('.product-info').addClass('col-sm');
 
-	// appending utm codes to each profile link
-	$('.utm').each(function(){
+	// appending authorCredit codes to each profile link
+	$('.authorCredit').each(function(){
 		var currentUrl = $(this).children().attr('href'),
-			utm = '?utm_source=puppy_store&utm_medium=referral',
 			newUrl = currentUrl + utm;
 
 			$(this).children().attr('href', newUrl);
