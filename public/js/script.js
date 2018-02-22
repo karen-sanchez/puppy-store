@@ -1,5 +1,23 @@
 $(document).ready(function(){
 
+
+	var fakeArray = [];
+	console.log(fakeArray);
+
+	$('.fake-img').each(function(){
+		var fHeight = $(this).find('.fake-height').html(),
+			fImg = $(this).find('img').attr('src'),
+			dummyHeight = 150;
+
+			if(fHeight < dummyHeight){
+				(fakeArray).push(fImg);
+			};
+
+			console.log(fHeight)
+			console.log(fImg)
+	});
+
+	
 	// INDEX
 	var picsTotal = $('.carousel-images > img').attr('src'),
 		picsArray = [];
