@@ -1,30 +1,19 @@
 $(document).ready(function(){
-
-
-	var fakeArray = [];
-	console.log(fakeArray);
-
-	$('.fake-img').each(function(){
-		var fHeight = $(this).find('.fake-height').html(),
-			fImg = $(this).find('img').attr('src'),
-			dummyHeight = 150;
-
-			if(fHeight < dummyHeight){
-				(fakeArray).push(fImg);
-			};
-
-			console.log(fHeight)
-			console.log(fImg)
-	});
-
 	
+	//////////////////////////////////
 	// INDEX
-	var picsTotal = $('.carousel-images > img').attr('src'),
-		picsArray = [];
+	//////////////////////////////////
+	var picsArray = [];
 
-	$('.carousel-images > img').each(function() {  
-		var picsHolder = this.src;
-		picsArray.push(picsHolder);
+	// filter returned images by size, then push into picsArray
+	$('.carousel-images').each(function() {  
+		var imgSrc = $(this).find('img').attr('src'),
+			imgHeight = $(this).find('.height').html(),
+			maxHeight = 4000;
+
+		if(imgHeight <= maxHeight){
+			picsArray.push(imgSrc);
+		};
 	 }); 
 
 	// replace the img src in each carousel item
@@ -42,7 +31,10 @@ $(document).ready(function(){
 	$('.carousel-indicators > li').first().addClass('active');
 	$('#puppy-carousel').carousel(); 
 
+	//////////////////////////////////
 	// PRODUCTS
+	//////////////////////////////////
+
 	var puppyProduct = $('.product-info');
 
 	// wrap a 'row' class to every 3 puppyProduct batch
@@ -61,11 +53,13 @@ $(document).ready(function(){
 			$(this).children().attr('href', newUrl);
 	});
 
+	//////////////////////////////////
 	// PRODUCTS > MODAL
+	//////////////////////////////////
+
 	$('.modal-btn').on('click', function(){
 		var newSrc = $(this).next().find('.modal-img').attr('href');		
 		$('.modal-content').children().attr('src', newSrc);
 	});
 
 });
-

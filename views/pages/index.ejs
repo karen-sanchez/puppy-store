@@ -9,19 +9,13 @@
     <% include ../partials/header %>
 </header>
 
-
-<div class="fake-img">
-	<img src="https://picsum.photos/200/300?image=0">
-	<div class="fake-height">20</div>
-</div>
-
-
 <div class="container">
-	<div class="carousel-images">
-		<% photos.forEach(function(photos){ %>
+	<% photos.forEach(function(photos){ %>
+		<div class="carousel-images">
 			<img src="<%= photos.urls.regular %>" class="modal-img d-none" alt="carousel-img" />
-		 <% }) %>
-	</div>
+			<div class="height d-none"><%= photos.height %></div>
+		</div>
+	 <% }) %>
     <!-- CAROUSEL -->
     <div class="container">
 		<div id="puppy-carousel" class="carousel slide" data-ride="carousel">
