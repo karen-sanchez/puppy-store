@@ -23,7 +23,6 @@ app.get('/puppies', function(req, res){
 			photos: photos,
 			link: link
 		});
-		console.log(photos[0])
 	});
 });
 
