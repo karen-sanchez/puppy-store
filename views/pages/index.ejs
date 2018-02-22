@@ -13,6 +13,7 @@
 	<% photos.forEach(function(photos){ %>
 		<div class="carousel-images">
 			<img src="<%= photos.urls.regular %>" class="modal-img d-none" alt="carousel-img" />
+			<p><%= photos.user.links.html %></p>
 			<div class="height d-none"><%= photos.height %></div>
 		</div>
 	 <% }) %>
