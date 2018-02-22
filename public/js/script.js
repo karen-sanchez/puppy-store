@@ -3,16 +3,25 @@ $(document).ready(function(){
 	//////////////////////////////////
 	// INDEX
 	//////////////////////////////////
-	var picsArray = [];
+	var picsArray = [],
+		imgCreditArray = [],
+		imgFnameArray = [],
+		imgLnameArray = [];
 
 	// filter returned images by size, then push into picsArray
 	$('.carousel-images').each(function() {  
 		var imgSrc = $(this).find('img').attr('src'),
 			imgHeight = $(this).find('.height').html(),
+			imgCredit = $(this).find('.imgAuthor').html(),
+			imgFname = $(this).find('.credit-fname').html(),
+			imgLname = $(this).find('.credit-lname').html(),
 			maxHeight = 4000;
 
 		if(imgHeight <= maxHeight){
 			picsArray.push(imgSrc);
+			imgCreditArray.push(imgCredit);
+			imgFnameArray.push(imgFname);
+			imgLnameArray.push(imgLname);
 		};
 	 }); 
 
@@ -20,6 +29,9 @@ $(document).ready(function(){
 	for(var i = 0; i < picsArray.length ; i++) {
 		var image = '<div class="carousel-item">' +
 					'<img src=" '+ picsArray[i] +' ">' +
+					'<div class="carousel-caption d-none d-md-block">' +
+					'<p>Photo by: </p><a href="'+ imgCreditArray[i] +'">'+ imgFnameArray[i] + ' ' + imgLnameArray[i] +'</a>'+
+					'</div>'+
 					'</div>',
 			indicators = '<li data-target="#puppy-carousel" data-slide-to="'+i+'"></li>';
 
