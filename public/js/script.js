@@ -40,7 +40,7 @@
 				};
 			 }); 
 
-			// replace the img src in each carousel item andn give credit to photographer
+			// replace the img src in each carousel item and give credit to photographer
 			for(var i = 0; i < picsArray.length ; i++) {
 				var image = '<div class="carousel-item">' +
 							'<img src=" '+ picsArray[i] +' ">' +
