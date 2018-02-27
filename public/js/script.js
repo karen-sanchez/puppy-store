@@ -5,7 +5,6 @@
 			this.cacheDOM();
 			this.homepage();
 			this.productsPage();
-			this.productsModal();
 			this.bindEvents();
 		},
 		cacheDOM: function(){
@@ -15,6 +14,8 @@
 		bindEvents: function(){
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
+			$('.add-to-cart').on('click', this.addToCart);
+			$('.cart-test').on('click', this.cart);
 		},
 		homepage: function() {
 			var picsArray = [],
@@ -64,6 +65,7 @@
 				this.$puppyProduct.slice(i, i+3).wrapAll('<div class="row"></div>');
 			};
 
+			this.$puppyProduct.parent().parent().find('.row').after('<hr>')
 			this.$puppyProduct.addClass('col-sm');
 
 			// appending author-credit codes to each profile link
@@ -78,6 +80,28 @@
 			// get new image src from click event
 			var newSrc = $(this).next().find('.modal-img').attr('href');		
 			$('.modal-content').children().attr('src', newSrc);
+		},
+		addToCart: function(){
+			var puppyName = $(this).closest('.product-info').find('.puppy-name').text(),
+				puppyPrice = $(this).closest('.product-info').find('.puppy-price').text(),
+				cookieName = Cookies.set('PUPPYNAME', puppyName),
+				cookiePrice = Cookies.set('PUPPYPRICE', puppyPrice);
+
+				console.log(puppyName)
+				console.log(puppyPrice)
+				
+				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart'); 
+			
+		},
+		cart: function(){
+			var getName = Cookies.get('PUPPYNAME'),
+				getPrice = Cookies.get('PUPPYPRICE');
+
+			$('.test-name').replaceWith(getName);
+			$('.test-price').replaceWith(getPrice);
+		},
+		checkout: function(){
+
 		}
 	};
 
