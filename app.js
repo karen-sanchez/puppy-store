@@ -18,10 +18,21 @@ app.get('/', function(req, res){
 })
 
 app.get('/puppies', function(req, res){
-	unsplash.searchPhotos('puppies', null, 2, 30, function(error, photos, link) {
+
+	var pageCount = 10,
+		currentPage = 1;
+
+	//set current page if specifed as get variable (eg: /?page=2)
+	if (typeof req.query.page !== 'undefined') {
+		currentPage = +req.query.page;
+	};
+
+	unsplash.searchPhotos('puppies', null, currentPage, 9, function(error, photos, link) {
 		res.render('pages/puppies', {
 			photos: photos,
-			link: link
+			link: link,
+			pageCount: pageCount,
+			currentPage: currentPage
 		});
 	});
 });
