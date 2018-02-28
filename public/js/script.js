@@ -74,11 +74,23 @@
 					newUrl = currentUrl + utm;
 
 					$(this).children().attr('href', newUrl);
+
 			});
+
+			// on hover display photographer name
+			$('.product-links').hover(
+				function() {
+					$(this).addClass('overlay');
+					$(this).find('.photographer-account').removeClass('d-none');
+				}, function() {
+					$(this).removeClass('ovelay');
+					$(this).find('.photographer-account').addClass('d-none');
+				}
+			);
 		},
 		productsModal: function(){
 			// get new image src from click event
-			var newSrc = $(this).next().find('.modal-img').attr('href');		
+			var newSrc = $(this).parent().next().find('.modal-img').attr('href');		
 			$('.modal-content').children().attr('src', newSrc);
 		},
 		addToCart: function(){

@@ -9,10 +9,9 @@ var clientId = process.env.clientId;
 unsplash.init(clientId);
 
 app.get('/', function(req, res){
-	unsplash.searchPhotos('puppies', null, 2, 30, function(error, photos, link) {		
+	unsplash.searchPhotos('puppies', null, 5, 30, function(error, photos, link) {		
 		res.render('pages/index', {
-			photos: photos,
-			link: link
+			photos: photos
 		});
 	});
 })

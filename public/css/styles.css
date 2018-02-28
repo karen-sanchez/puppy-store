@@ -6,3 +6,21 @@
 }
 .carousel-control-next-icon, .carousel-control-prev-icon { background-color: green; }
 .modal-content { background-color: transparent !important; }
+
+.overlay {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.photographer-account a{
+	position: absolute;
+	color: hsla(0,0%,100%,.8);
+	width: 100%;
+	z-index: 3;
+	right: 0;
+	bottom: 0;
+}

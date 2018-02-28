@@ -12,18 +12,25 @@
 <div class="container">
 	<% photos.forEach(function(photos){ %>
 	<div class="product-info">
-		<a data-toggle="modal" class="modal-btn" href=".puppy-modal">
-			<img src="<%= photos.urls.small %>" style="max-width:300px;" alt="product-img" />
-		</a>
+		<div class="product-links">
+			<a data-toggle="modal" class="modal-btn" href=".puppy-modal">
+				<img src="<%= photos.urls.small %>" style="max-width:300px;" alt="product-img" />
+			</a>
+			<span class="photographer-account d-none">
+				<a href="<%= photos.user.links.html %>"><%= photos.user.first_name %> <%= photos.user.last_name %></a>
+			</span>
+		</div>
 		<ul>
 			<li class="puppy-name">Name: <strong><%= photos.user.first_name %></strong></li>
 			<li class="puppy-price">Price: <strong>$<%= photos.likes %></strong></li>
-			<li class="author-credit">Photo credit: <a href="<%= photos.user.links.html %>"><%= photos.user.first_name %> <%= photos.user.last_name %></a></li>	
+			<li class="author-credit d-none">Photo credit: <a href="<%= photos.user.links.html %>"><%= photos.user.first_name %> <%= photos.user.last_name %></a></li>	
 			<a href="<%= photos.urls.regular %>" class="modal-img d-none"></a>
 		</ul>
 		<button type="button" class="btn btn-info add-to-cart">Add to cart</button>
 	</div>
 	<% }) %>
+
+	<!-- pagination -->
 	<% if (pageCount > 1) { %>  
 		<ul class="pagination">  
 			<% if (currentPage > 1) { %>
