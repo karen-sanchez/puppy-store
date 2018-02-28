@@ -94,12 +94,12 @@
 		},
 		addToCart: function(){
 			var puppyName = $(this).closest('.product-info').find('.puppy-name').text(),
-				puppyPrice = $(this).closest('.product-info').find('.puppy-price').text(),
+				puppyPrice = $(this).closest('.product-info').find('.puppy-price').find('strong').text(),
 				cookieName = Cookies.set('PUPPYNAME', puppyName),
 				cookiePrice = Cookies.set('PUPPYPRICE', puppyPrice);
 
 				console.log(puppyName)
-				console.log(puppyPrice)
+				console.log(typeof puppyPrice)
 				
 				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart'); 
 			
@@ -114,6 +114,8 @@
 		checkout: function(){
 
 		}
+
+		// private methods
 	};
 
 	PS.init();
