@@ -74,7 +74,6 @@
 					newUrl = currentUrl + utm;
 
 					$(this).children().attr('href', newUrl);
-
 			});
 
 			// on hover display photographer name
