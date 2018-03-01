@@ -138,8 +138,9 @@
 						  			'<td class="product-price">' + productPrice + '</td></tr>';
 
 					$('#cart-table').append(cartProducts);
-
 			});
+
+			//empty single item from cart
 
 			// empty cart
 			$('.empty-cart').click(function(){
