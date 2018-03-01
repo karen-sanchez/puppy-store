@@ -5,6 +5,7 @@
 			this.cacheDOM();
 			this.homepage();
 			this.productsPage();
+			this.addToCart();
 			this.bindEvents();
 		},
 		cacheDOM: function(){
@@ -14,8 +15,8 @@
 		bindEvents: function(){
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
-			$('.add-to-cart').on('click', this.addToCart);
-			$('.cart-test').on('click', this.cart);
+			// $('.add-to-cart').on('click', this.addToCart);
+			// $('.cart-test').on('click', this.cart);
 		},
 		homepage: function() {
 			var picsArray = [],
@@ -93,23 +94,45 @@
 			$('.modal-content').children().attr('src', newSrc);
 		},
 		addToCart: function(){
-			var puppyName = $(this).closest('.product-info').find('.puppy-name').text(),
-				puppyPrice = $(this).closest('.product-info').find('.puppy-price').find('strong').text(),
-				cookieName = Cookies.set('PUPPYNAME', puppyName),
-				cookiePrice = Cookies.set('PUPPYPRICE', puppyPrice);
+			// all values in local storage are strings
+			// Objects may be stored in local storage by first turning them into JSON strings (with JSON.stringify()) 
+			// and then back into JavaScript objects (with JSON.parse()):
+			var	cart;
 
-				console.log(puppyName)
-				console.log(typeof puppyPrice)
-				
-				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart'); 
+			if (localStorage.getItem('cart')) {
+				cart = JSON.parse(localStorage.getItem('cart'));
+				console.log('cart exists');
+			} else {
+				cart = [];
+				console.log('cart does not exist');
+			}
+
+			$('.add-to-cart').on('click', function(){
+				var productName = $(this).closest('.product-info').find('.puppy-name').find('strong').text(),
+					productPrice = $(this).closest('.product-info').find('.puppy-price').find('strong').text();
+
+				cart.push({
+					item: productName, 
+					price: productPrice
+				});
+
+				// stringify cart objects to be pushed into local storage
+				var jsonStr = JSON.stringify( cart );
+				// set new stringified cart into local storage 
+				localStorage.setItem( "cart", jsonStr );
+
+				// get the local storage 
+				var cartValue = localStorage.getItem( "cart" );
+				// parse stringified cart back into objects to be manipulated
+				var parseme = JSON.parse(cartValue);
+
+				console.log(parseme)
+				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
+			});
 			
 		},
 		cart: function(){
-			var getName = Cookies.get('PUPPYNAME'),
-				getPrice = Cookies.get('PUPPYPRICE');
 
-			$('.test-name').replaceWith(getName);
-			$('.test-price').replaceWith(getPrice);
 		},
 		checkout: function(){
 
