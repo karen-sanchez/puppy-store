@@ -140,6 +140,12 @@
 					$('#cart-table').append(cartProducts);
 
 			});
+
+			// empty cart
+			$('.empty-cart').click(function(){
+				$('#cart-table tr:nth-child(1)').nextAll().remove();
+				localStorage.clear();
+			});
 		},
 		checkout: function(){
 
