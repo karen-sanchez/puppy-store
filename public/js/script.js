@@ -16,7 +16,7 @@
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
 			// $('.add-to-cart').on('click', this.addToCart);
-			// $('.cart-test').on('click', this.cart);
+			$('.cart-refresh').on('click', this.cart);
 		},
 		homepage: function() {
 			var picsArray = [],
@@ -117,22 +117,29 @@
 				});
 
 				// stringify cart objects to be pushed into local storage
-				var jsonStr = JSON.stringify( cart );
+				var jsonStr = JSON.stringify(cart);
 				// set new stringified cart into local storage 
-				localStorage.setItem( "cart", jsonStr );
+				localStorage.setItem('cart', jsonStr);
 
-				// get the local storage 
-				var cartValue = localStorage.getItem( "cart" );
-				// parse stringified cart back into objects to be manipulated
-				var parseme = JSON.parse(cartValue);
-
-				console.log(parseme)
 				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
 			});
 			
 		},
 		cart: function(){
+			// get the local storage 
+			var cartValue = localStorage.getItem('cart'),
+			// parse stringified cart back into original objects to be manipulated
+				cartObj = JSON.parse(cartValue);
 
+			$.each(cartObj, function(key, value) {
+				var productName = value.item,
+					productPrice = value.price,
+					cartProducts = '<tr><td class="product-name">' + productName + '</td>' +
+						  			'<td class="product-price">' + productPrice + '</td></tr>';
+
+					$('#cart-table').append(cartProducts);
+
+			});
 		},
 		checkout: function(){
 
