@@ -18,6 +18,7 @@
 			$('.modal-btn').on('click', this.productsModal);
 			// $('.add-to-cart').on('click', this.addToCart);
 			$('.cart-refresh').on('click', this.cart);
+			$('.empty-cart').on('click', this.emptyCart);
 		},
 		homepage: function() {
 			var picsArray = [],
@@ -127,32 +128,38 @@
 			
 		},
 		cart: function(){
-			// get the local storage 
+			// get cart from local storage 
 			var cartValue = localStorage.getItem('cart'),
 			// parse stringified cart back into original objects to be manipulated
-				cartObj = JSON.parse(cartValue);
+				cartObj = JSON.parse(cartValue),
+				cartTotal = 0;
+				priceHolder = [],
+				newPriceArr = [];
 
+			// find product name and price and output to table
 			$.each(cartObj, function(key, value) {
 				var	productName = value.item,
-					productPrice = Number(value.price),
+					productPrice = value.price,
 					cartProducts = '<tr><td class="product-name">' + productName + '</td>' +
 						  			'<td class="product-price">' + productPrice + '</td></tr>';
 
+					priceHolder.push(productPrice);
 					$('#cart-table').append(cartProducts);
-					console.log(typeof productPrice)
 			});
+			// find each item price, turn to number, add, and output to total section
+			for(key in priceHolder) {
+				if(priceHolder.hasOwnProperty(key)) {
+					var value = priceHolder[key];
 
-			// add prices and output to TOTAL
-			var total = '$120';
-			$('#cart-total').append(total);
-
-			//empty single item from cart
-
-			// empty cart
-			$('.empty-cart').click(function(){
-				$('#cart-table tr:nth-child(1)').nextAll().remove();
-				localStorage.clear();
-			});
+					newPriceArr.push(PS._strToNum(value));
+				};
+			};
+			cartTotal = newPriceArr.reduce(PS._sum);
+			$('#cart-total').append(cartTotal);
+		},
+		emptyCart: function() {
+			$('#cart-table tr:nth-child(1)').nextAll().remove();
+			localStorage.clear();
 		},
 		checkout: function(){
 
@@ -172,9 +179,12 @@
 			if( !isNaN( num ) ) {
 				return num;
 			} else {
-				console.warn(str + 'cannot be converted into a number');
+				console.log(str + 'cannot be converted into a number');
 				return false;
 			}
+		},
+		_sum: function(total, num) {
+			return total + num;
 		}
 	};
 
