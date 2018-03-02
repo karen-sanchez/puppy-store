@@ -6,18 +6,16 @@
 			this.homepage();
 			this.productsPage();
 			this.addToCart();
+			this.cart();
 			this.bindEvents();
 		},
 		cacheDOM: function(){
 			// if a selector is used > 1 add it to cacheDOM
 			this.$puppyProduct = $('.product-info');
-			this.$self = this;
 		},
 		bindEvents: function(){
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
-			// $('.add-to-cart').on('click', this.addToCart);
-			$('.cart-refresh').on('click', this.cart);
 			$('.empty-cart').on('click', this.emptyCart);
 		},
 		homepage: function() {
@@ -124,8 +122,7 @@
 				localStorage.setItem('cart', jsonStr);
 
 				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
-			});
-			
+			});			
 		},
 		cart: function(){
 			// get cart from local storage 
@@ -161,10 +158,7 @@
 			$('#cart-table tr:nth-child(1)').nextAll().remove();
 			localStorage.clear();
 		},
-		checkout: function(){
-
-		},
-
+		checkout: function(){},
 		// private methods
 		_strToNum: function(str){
 			var num;
