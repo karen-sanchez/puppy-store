@@ -11,6 +11,7 @@
 		cacheDOM: function(){
 			// if a selector is used > 1 add it to cacheDOM
 			this.$puppyProduct = $('.product-info');
+			this.$self = this;
 		},
 		bindEvents: function(){
 			// binding events in modular js changes the 'this' context
@@ -132,13 +133,18 @@
 				cartObj = JSON.parse(cartValue);
 
 			$.each(cartObj, function(key, value) {
-				var productName = value.item,
-					productPrice = value.price,
+				var	productName = value.item,
+					productPrice = Number(value.price),
 					cartProducts = '<tr><td class="product-name">' + productName + '</td>' +
 						  			'<td class="product-price">' + productPrice + '</td></tr>';
 
 					$('#cart-table').append(cartProducts);
+					console.log(typeof productPrice)
 			});
+
+			// add prices and output to TOTAL
+			var total = '$120';
+			$('#cart-total').append(total);
 
 			//empty single item from cart
 
@@ -150,9 +156,26 @@
 		},
 		checkout: function(){
 
-		}
+		},
 
 		// private methods
+		_strToNum: function(str){
+			var num;
+			if( /^[-+]?[0-9]+\.[0-9]+$/.test(str) ) {
+				num = parseFloat(str);
+			} else if( /^\d+$/.test(str) ) {
+				num = parseInt(str, 10 );
+			} else {
+				num = Number(str);
+			}
+			
+			if( !isNaN( num ) ) {
+				return num;
+			} else {
+				console.warn(str + 'cannot be converted into a number');
+				return false;
+			}
+		}
 	};
 
 	PS.init();
