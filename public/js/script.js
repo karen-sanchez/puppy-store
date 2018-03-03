@@ -61,7 +61,7 @@
 			$('#puppy-carousel').carousel();
 		},
 		productsPage: function() {
-			// wrap a 'row' class to every 3 puppyProduct batch
+			// wrap a 'row' class to every 3rd puppyProduct batch
 			for(var i = 0; i < this.$puppyProduct.length; i+=3) {
 				this.$puppyProduct.slice(i, i+3).wrapAll('<div class="row"></div>');
 			};
@@ -124,8 +124,7 @@
 				localStorage.setItem('cart', jsonStr);
 
 				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
-			});		
-			console.log(cart);	
+			});
 		},
 		cart: function(){
 			// get cart from local storage 
@@ -134,9 +133,6 @@
 				cartObj = JSON.parse(cartValue),
 				priceHolder = [],
 				newPriceArr = [];
-
-
-				// console.log(cartObj)
 
 			// find product name and price and output to table
 			$.each(cartObj, function(key, value) {
@@ -165,7 +161,6 @@
 			} else {
 				$('#cart-total').append('0');
 			};
-
 		},
 		emptyCart: function() {
 			$('#cart-table tr:nth-child(1)').nextAll().remove();
