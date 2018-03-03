@@ -161,6 +161,7 @@
 		},
 		emptyCart: function() {
 			$('#cart-table tr:nth-child(1)').nextAll().remove();
+			$('#cart-total').empty();
 			localStorage.clear();
 		},
 		checkout: function(){},
