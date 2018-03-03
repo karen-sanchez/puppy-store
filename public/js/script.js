@@ -129,7 +129,6 @@
 			var cartValue = localStorage.getItem('cart'),
 			// parse stringified cart back into original objects to be manipulated
 				cartObj = JSON.parse(cartValue),
-				cartTotal = 0;
 				priceHolder = [],
 				newPriceArr = [];
 
@@ -151,8 +150,14 @@
 					newPriceArr.push(PS._strToNum(value));
 				};
 			};
-			cartTotal = newPriceArr.reduce(PS._sum);
-			$('#cart-total').append(cartTotal);
+			// calculate total if array is not empty, else total is 0
+			if (newPriceArr.length != ''){
+				var cartTotal = newPriceArr.reduce(PS._sum);
+				$('#cart-total').append(cartTotal);
+			} else {
+				$('#cart-total').append('0');
+			};
+
 		},
 		emptyCart: function() {
 			$('#cart-table tr:nth-child(1)').nextAll().remove();
