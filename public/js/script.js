@@ -109,10 +109,12 @@
 
 			$('.add-to-cart').on('click', function(){
 				var productName = $(this).closest('.product-info').find('.puppy-name').find('strong').text(),
+					productImage = $(this).closest('.product-info').find('.puppy-image').attr('href'),
 					productPrice = $(this).closest('.product-info').find('.puppy-price').find('strong').text();
 
 				cart.push({
-					item: productName, 
+					item: productName,
+					image: productImage,
 					price: productPrice
 				});
 
@@ -122,7 +124,8 @@
 				localStorage.setItem('cart', jsonStr);
 
 				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
-			});			
+			});		
+			console.log(cart);	
 		},
 		cart: function(){
 			// get cart from local storage 
@@ -132,11 +135,16 @@
 				priceHolder = [],
 				newPriceArr = [];
 
+
+				// console.log(cartObj)
+
 			// find product name and price and output to table
 			$.each(cartObj, function(key, value) {
 				var	productName = value.item,
 					productPrice = value.price,
+					productImage = value.image,
 					cartProducts = '<tr><td class="product-name">' + productName + '</td>' +
+									'<td class="product-image"><img src="' + productImage + '" style="height: 70px;"></td>' +
 						  			'<td class="product-price">' + productPrice + '</td></tr>';
 
 					priceHolder.push(productPrice);
