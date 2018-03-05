@@ -131,6 +131,7 @@
 			var cartValue = localStorage.getItem('cart'),
 			// parse stringified cart back into original objects to be manipulated
 				cartObj = JSON.parse(cartValue),
+				clicked = false,
 				priceHolder = [],
 				newPriceArr = [];
 
@@ -141,12 +142,31 @@
 					productImage = value.image,
 					cartProducts = '<tr><td class="product-name">' + productName + '</td>' +
 									'<td class="product-image"><img src="' + productImage + '" style="height: 70px;"></td>' +
-						  			'<td class="product-price">' + productPrice + '</td></tr>';
+						  			'<td class="product-price">' + productPrice + '</td>' +
+						  			'<td><button type="button" class="btn btn-link remove-item" data-clicked="false">Remove</button></td></tr>';
 
 					priceHolder.push(productPrice);
 					$('#cart-table').append(cartProducts);
 			});
-			// find each item price, turn to number, add, and output to total section
+
+			// if remove item link is clicked, reset local storage item to new array
+			$('.remove-item').on('click', function(){
+				var itemName = $(this).closest('tr').find('.product-name').html(),
+					clicked = true,
+					removeSingleItem = cartObj.filter(function(el) {
+						return el.item !== itemName;
+					});
+
+				if (clicked === true){
+					cart = removeSingleItem;
+
+					$(this).closest('tr').remove();
+					window.location.reload();
+					localStorage.setItem('cart', JSON.stringify(cart));
+				}
+			});
+
+			// find each item price, convert into a number, add, and output to total section
 			for(key in priceHolder) {
 				if(priceHolder.hasOwnProperty(key)) {
 					var value = priceHolder[key];
