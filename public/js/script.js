@@ -194,6 +194,9 @@
 				cartTotalObj = JSON.parse(getCartTotal);
 
 				$('#checkout-total').append(cartTotalObj);
+
+			// form validation
+			$("#commentForm").validate();
 		},
 		// private methods
 		_strToNum: function(str){
