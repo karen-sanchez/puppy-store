@@ -196,7 +196,19 @@
 				$('#checkout-total').append(cartTotalObj);
 
 			// form validation
-			$("#commentForm").validate();
+			$('#checkoutForm').validate();
+
+			$('#checkoutForm').submit(function(e){
+				if ($('#checkoutForm').valid()){
+					$('#checkoutModal').modal('show');
+				};
+				e.preventDefault();
+			});
+
+			// reset form
+			$('.reset-form').click(function(){
+				$('#checkoutForm').trigger('reset');
+			});
 		},
 		// private methods
 		_strToNum: function(str){

@@ -5,7 +5,6 @@
     border-radius: .25rem;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon { background-color: green; }
-.modal-content { background-color: transparent !important; }
 
 .overlay {
   display: block;
