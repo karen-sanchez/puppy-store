@@ -102,10 +102,8 @@
 
 			if (localStorage.getItem('cart')) {
 				cart = JSON.parse(localStorage.getItem('cart'));
-				console.log('cart exists');
 			} else {
 				cart = [];
-				console.log('cart does not exist');
 			}
 
 			$('.add-to-cart').on('click', function(){
@@ -199,6 +197,20 @@
 			$('#checkoutForm').validate();
 
 			$('#checkoutForm').submit(function(e){
+				// location autocomplete
+				$.LiveAddress({
+					key: '25507696545888207',
+					waitForStreet: true,
+					debug: true,
+					target: "US",
+					addresses: [{
+						country: "#country",
+						address1: "#street",
+						locality: "#city",
+						administrative_area: "#state",
+						postal_code: "#ZIP"
+					}]
+				});
 				if ($('#checkoutForm').valid()){
 					$('#checkoutModal').modal('show');
 				};
@@ -224,7 +236,6 @@
 			if( !isNaN( num ) ) {
 				return num;
 			} else {
-				console.log(str + 'cannot be converted into a number');
 				return false;
 			}
 		},
