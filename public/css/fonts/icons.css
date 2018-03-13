@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Linearicons-Free";
+    src: url("Linearicons-Free.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lnr {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Linearicons-Free' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lnr-home:before {
+  content: "\e800";
+}
+.lnr-heart:before {
+  content: "\e813";
+}
+.lnr-cart:before {
+  content: "\e82e";
+}
+.lnr-paw:before {
+  content: "\e84a";
+}
+.lnr-sad:before {
+  content: "\e855";
+}
+.lnr-magnifier:before {
+  content: "\e86f";
+}
+.lnr-cross:before {
+  content: "\e870";
+}
+.lnr-menu:before {
+  content: "\e871";
+}
+.lnr-chevron-up:before {
+  content: "\e873";
+}
+.lnr-chevron-left:before {
+  content: "\e875";
+}
+.lnr-chevron-right:before {
+  content: "\e876";
+}
+.lnr-arrow-up:before {
+  content: "\e877";
+}
+.lnr-arrow-left-circle:before {
+  content: "\e885";
+}
+.lnr-arrow-right-circle:before {
+  content: "\e886";
+}
+.lnr-chevron-up-circle:before {
+  content: "\e887";
+}
+.lnr-chevron-left-circle:before {
+  content: "\e889";
+}
+.lnr-chevron-right-circle:before {
+  content: "\e88a";
+}
