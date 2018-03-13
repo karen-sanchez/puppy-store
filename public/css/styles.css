@@ -1,5 +1,10 @@
 @import url("./fonts/icons.css");
 
+* {
+  font-family: 'Fjalla One', sans-serif;
+  /*font-family: 'Quicksand', sans-serif;*/
+}
+
 .bd-example-container-body {
 	height: 8rem;
     margin-right: 4.5rem;
