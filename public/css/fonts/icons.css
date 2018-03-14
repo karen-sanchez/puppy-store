@@ -20,6 +20,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lnr-lg {
+  font-size: 2.5em;
+}
+
 .lnr-home:before {
   content: "\e800";
 }

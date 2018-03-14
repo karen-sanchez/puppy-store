@@ -3,7 +3,7 @@
 <head>
     <% include ../partials/head %>
 </head>
-<body class="container">
+<body class="container-fluid">
 
 <header>
     <% include ../partials/header %>
@@ -21,7 +21,7 @@
 	 <% }) %>
     <!-- CAROUSEL -->
     <div class="container">
-		<div id="puppy-carousel" class="carousel slide" data-ride="carousel" style="width: 500px;">
+		<div id="puppy-carousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators"></ol>
 			<div class="carousel-inner"></div>
 			<!-- Controls -->
@@ -36,9 +36,79 @@
 		</div>
 	</div>
 </div>
-<i class="lnr lnr-home">TEST</i>
-<i class="lnr lnr-heart">TEST</i>
-<i class="lnr lnr-sad">TEST</i>
+<!-- HOW TO SECTION -->
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<div class="card-deck">
+			<div class="card">
+				<i class="lnr lnr-paw"></i>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<i class="lnr lnr-magnifier"></i>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<i class="lnr lnr-home"></i>
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- REVIEWS SECTION -->
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class="text-center">Why our customers <i class="lnr lnr-heart"></i> us!</h1>
+		<div class="card-deck">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CTA SECTION -->
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>What are you waiting for?</h1>
+			</div>
+			<div class="col text-center">
+				<button type="button" class="btn btn-lg btn-primary">shop now!</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <footer>
     <% include ../partials/footer %>

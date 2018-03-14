@@ -18,6 +18,8 @@
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
 			$('.empty-cart').on('click', this.emptyCart);
+			$('.open-sidenav').on('click', this.openNav);
+			$('.closebtn').on('click', this.closeNav);
 		},
 		homepage: function() {
 			var picsArray = [],
@@ -60,6 +62,12 @@
 			$('.carousel-item').first().addClass('active');
 			$('.carousel-indicators > li').first().addClass('active');
 			$('#puppy-carousel').carousel();
+		},
+		openNav: function(){
+			$('.sidenav').width('250px');
+		},
+		closeNav: function(){
+			$('.sidenav').width('0px');
 		},
 		productsPage: function() {
 			// wrap a 'row' class to every 3rd puppyProduct batch
