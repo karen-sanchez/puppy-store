@@ -20,6 +20,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lnr-md {
+  font-size: 1.8em;
+}
+
 .lnr-lg {
   font-size: 2.5em;
 }

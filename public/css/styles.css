@@ -5,6 +5,22 @@
   /*font-family: 'Quicksand', sans-serif;*/
 }
 
+/*	HOMEPAGE  */
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro {
+  padding: 1rem 2rem;
+  opacity: 0.9;
+  background-color: #f2f3fa;
+  width: 80%;
+}
+
 /*  SIDENAV  */
 
 .sidenav {
@@ -14,7 +30,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #487fff;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -24,7 +40,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #ecf3f6;
     display: block;
     transition: 0.3s;
 }
@@ -46,13 +62,33 @@
   .sidenav a {font-size: 18px;}
 }
 
-.bd-example-container-body {
-  height: 8rem;
-    margin-right: 4.5rem;
-    background-color: #957bbe;
-    border-radius: .25rem;
+/* Set width to make card deck cards 100% width */
+@media (max-width: 950px) { 
+	.card-deck-wrapper { margin-right:0;margin-left:0; }
+	.card-deck {
+		display: block;
+		width: 100%;
+		margin-bottom: .75rem;
+		table-layout: fixed;
+		border-spacing: 1.25rem 0;
+	}
+	.card-deck .card {
+		display: block;
+		margin-bottom: .75rem;
+		vertical-align: top;
+	}
+	.card-deck .card:not(:first-child) {
+		margin-left: 0px;
+	}
 }
-.carousel-control-next-icon, .carousel-control-prev-icon { background-color: green; }
+
+
+/*.bd-example-container-body {
+  height: 8rem;
+  margin-right: 4.5rem;
+  background-color: #957bbe;
+  border-radius: .25rem;
+}*/
 
 .overlay {
   display: block;
