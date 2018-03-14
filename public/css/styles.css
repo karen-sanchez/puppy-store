@@ -1,11 +1,14 @@
 @import url("./fonts/icons.css");
 
-* {
-  font-family: 'Fjalla One', sans-serif;
-  /*font-family: 'Quicksand', sans-serif;*/
+* { font-family: 'Fjalla One', sans-serif; }
+.btn-custom {
+	background-color: #487fff;
+	color: #ecf3f6;
+	font-family: 'Quicksand', sans-serif;
+	letter-spacing: 1.5px;
 }
 
-/*	HOMEPAGE  */
+/*	CAROUSEL + INTRO SECTION  */
 
 .centered {
     position: absolute;
@@ -13,13 +16,48 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .intro {
   padding: 1rem 2rem;
   opacity: 0.9;
   background-color: #f2f3fa;
   width: 80%;
 }
+
+/*	HOW-TO SECTION  */
+
+.workflow-section .card { border-radius: 0px !important; }
+
+.workflow-section .card-title { 
+	background-color: #487fff;
+	color: #ecf3f6;
+	height: 4em;
+	padding: 10px 0px;
+	margin-bottom: 0px !important;
+}
+.workflow-section .card-body {
+	background-size: cover;
+	color: #ecf3f6;
+	height: 250px;
+}
+.workflow-section .first-card.card-body {
+	background-image: url('../images/img1.jpg');
+}
+.workflow-section .second-card.card-body {
+	background-image: url('../images/img2.jpg');
+}
+.workflow-section .third-card.card-body {
+	background-image: url('../images/img3.jpg');
+}
+
+/*	REVIEWS SECTION  */
+
+.reviews.jumbotron-fluid {
+	background-color: #f2f3fa;
+	padding: 2em 1em;
+}
+.reviews .card-text { font-family: 'Quicksand', sans-serif; }
+.reviews .card-body { background-color: #f2f3fa; }
+.reviews .card { border: none; }
 
 /*  SIDENAV  */
 
@@ -62,6 +100,14 @@
   .sidenav a {font-size: 18px;}
 }
 
+/*  FOOTER  */
+
+.page-footer { 	background-color: #313638; }
+.page-footer *{
+	color: #ecf3f6;
+	font-family: 'Quicksand', sans-serif;
+}
+
 /* Set width to make card deck cards 100% width */
 @media (max-width: 950px) { 
 	.card-deck-wrapper { margin-right:0;margin-left:0; }
@@ -76,6 +122,7 @@
 		display: block;
 		margin-bottom: .75rem;
 		vertical-align: top;
+		margin-left: 0px;
 	}
 	.card-deck .card:not(:first-child) {
 		margin-left: 0px;

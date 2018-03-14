@@ -49,7 +49,7 @@
 			for(var i = 0; i < picsArray.length ; i++) {
 				var image = '<div class="carousel-item">' +
 							'<img src=" '+ picsArray[i] +' ">' +
-							'<div class="carousel-caption d-none d-md-block">' +
+							'<div class="carousel-caption">' +
 							'<p>Photo by: </p><a href="'+ imgCreditArray[i] + utm +'">'+ imgFnameArray[i] + ' ' + imgLnameArray[i] +'</a>'+
 							'</div>'+
 							'</div>',
