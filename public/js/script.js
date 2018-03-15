@@ -35,7 +35,7 @@
 					imgCredit = $(this).find('.imgAuthor').html(),
 					imgFname = $(this).find('.credit-fname').html(),
 					imgLname = $(this).find('.credit-lname').html(),
-					maxHeight = 4000;
+					maxHeight = 2500;
 
 				if(imgHeight <= maxHeight){
 					picsArray.push(imgSrc);

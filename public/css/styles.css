@@ -7,6 +7,9 @@
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 1.5px;
 }
+.btn-custom:hover {
+	background-color: #4072e5;
+}
 
 /*	CAROUSEL + INTRO SECTION  */
 
