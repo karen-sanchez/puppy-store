@@ -20,12 +20,22 @@
 	</div>
  <% }) %>
 <!-- CAROUSEL-->
-<div>
-	<div id="puppy-carousel" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner"></div>
-		<div class="intro centered">
-			<p>Matching the perfect puppy to the perfect owner.</p>
-			<button type="button" class="btn btn-custom">shop now!</button>
+<div class="jumbotron-fluid intro-jumbo mb-5">
+	<div class="row">
+		<div class="col d-none d-sm-block">
+			<div class="centered">
+				<h1>Matching the perfect puppy to the perfect owner.</h1>
+				<button type="button" class="btn btn-lg btn-custom">shop now!</button>
+			</div>
+		</div>
+		<div class="col">
+			<div id="puppy-carousel" class="carousel slide homepage-carousel" data-ride="carousel">
+				<div class="carousel-inner"></div>
+					<div class="intro centered d-sm-none">
+						<p>Matching the perfect puppy to the perfect owner.</p>
+						<button type="button" class="btn btn-custom">shop now!</button>
+					</div>
+			</div>
 		</div>
 	</div>
 </div>
