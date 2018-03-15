@@ -19,31 +19,32 @@
 		<div class="height d-none"><%= photos.height %></div>
 	</div>
  <% }) %>
+ <div class="container-fluid"><!-- MAIN CONTAINER -->
 <!-- CAROUSEL-->
-<div class="jumbotron-fluid intro-jumbo mb-5">
-	<div class="row">
-		<div class="col d-none d-sm-block">
-			<div class="centered">
-				<h1>Matching the perfect puppy to the perfect owner.</h1>
-				<a href="/puppies"><button type="button" class="btn btn-lg btn-custom">shop now!</button></a>
+	<div class="jumbotron-fluid intro-jumbo mb-5">
+		<div class="row">
+			<div class="col d-none d-sm-block">
+				<div class="centered">
+					<h1>Matching the perfect puppy to the perfect owner.</h1>
+					<a href="/puppies"><button type="button" class="btn btn-lg btn-custom">shop now!</button></a>
+				</div>
 			</div>
-		</div>
-		<div class="col">
-			<div id="puppy-carousel" class="carousel slide homepage-carousel" data-ride="carousel">
-				<div class="carousel-inner"></div>
-					<div class="intro centered d-sm-none">
-						<p>Matching the perfect puppy to the perfect owner.</p>
-						<a href="/puppies"><button type="button" class="btn btn-custom">shop now!</button></a>
-					</div>
+			<div class="col">
+				<div id="puppy-carousel" class="carousel slide homepage-carousel" data-ride="carousel">
+					<div class="carousel-inner"></div>
+						<div class="intro centered d-sm-none">
+							<p>Matching the perfect puppy to the perfect owner.</p>
+							<a href="/puppies"><button type="button" class="btn btn-custom">shop now!</button></a>
+						</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- HOW TO SECTION -->
-<div class="jumbotron-fluid mt-5 workflow-section">
-	<div class="container">
-		<div class="card-deck-wrapper">
-			<div class="card-deck">
+
+	<!-- HOW TO SECTION -->
+	<div class="jumbotron-fluid workflow-section mt-5">
+		<div class="container">
+			<div class="card-deck mx-auto">
 				<div class="card text-center">
 					<div class="card-title"><i class="lnr lnr-lg lnr-paw"></i></div>
 					<div class="first-card card-body">
@@ -68,46 +69,47 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!-- REVIEWS SECTION -->
-<div class="reviews jumbotron-fluid mt-5">
-	<div class="container">
-		<h3 class="text-center mt-3 mb-5">Why our customers <i class="lnr lnr-heart"></i> us!</h3>
-		<div class="card-deck">
-			<div class="card">
-				<div class="card-body">
-					<p class="card-text">I found my puppy chubby on this site and I am so thankful forver blah blah!</p>
-					<p class="card-text text-right"><small>ANNA</small></p>
+	<!-- REVIEWS SECTION -->
+	<div class="jumbotron-fluid reviews mt-5">
+		<div class="container">
+			<h3 class="text-center mt-3 mb-5">Why our customers <i class="lnr lnr-heart"></i> us!</h3>
+			<div class="card-deck">
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text">I found my puppy chubby on this site and I am so thankful forver blah blah!</p>
+						<p class="card-text text-right"><small>ANNA</small></p>
+					</div>
 				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<p class="card-text">I found my puppy chubby on this site and I am so thankful forver blah blah!</p>
-					<p class="card-text text-right"><small>JACOB</small></p>
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text">I found my puppy chubby on this site and I am so thankful forver blah blah!</p>
+						<p class="card-text text-right"><small>JACOB</small></p>
+					</div>
 				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<p class="card-text">I found my puppy chubby on this site and I am so thankful forver blah blah!</p>
-					<p class="card-text text-right"><small>LEENDA</small></p>
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text">I found my puppy chubby on this site and I am so thankful forver blah blah!</p>
+						<p class="card-text text-right"><small>LEENDA</small></p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- BOTTOM CTA SECTION -->
-<div class="jumbotron-fluid mt-5 mb-5">
-	<div class="container">
-		<div class="row py-4 d-flex align-items-center">
-			<div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-				<h3>What are you waiting for?</h3>
-			</div>
-			<div class="col-md-6 col-lg-7 text-center text-md-right">
-				<a href="/puppies"><button type="button" class="btn btn-lg btn-custom">shop now!</button></a>
+	<!-- BOTTOM CTA SECTION -->
+	<div class="jumbotron-fluid mt-5 mb-5">
+		<div class="container">
+			<div class="row py-4 d-flex align-items-center">
+				<div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+					<h3>What are you waiting for?</h3>
+				</div>
+				<div class="col-md-6 col-lg-7 text-center text-md-right">
+					<a href="/puppies"><button type="button" class="btn btn-lg btn-custom">shop now!</button></a>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
+</div><!-- /main container -->
 
 <footer>
     <% include ../partials/footer %>

@@ -28,12 +28,16 @@
 .homepage-carousel .carousel-item {
 	width: 400px;
 }
-.intro-jumbo {
-	padding: 6em 0em 6em 2em;
+
+@media (min-width: 570px) { 
+	.intro-jumbo {
+		padding: 6em 0em 6em 2em;
+	}
 }
 
 /*	HOW-TO SECTION  */
 
+/*.workflow-section { padding: 2em 1em; }*/
 .workflow-section .card { border-radius: 0px !important; }
 
 .workflow-section .card-title { 
@@ -118,26 +122,20 @@
 }
 
 /* Set width to make card deck cards 100% width */
-@media (max-width: 950px) { 
-	.card-deck-wrapper { margin-right:0;margin-left:0; }
+
+@media (max-width: 800px) { 
 	.card-deck {
 		display: block;
 		width: 100%;
 		margin-bottom: .75rem;
-		table-layout: fixed;
-		border-spacing: 1.25rem 0;
 	}
 	.card-deck .card {
 		display: block;
 		margin-bottom: .75rem;
 		vertical-align: top;
-		margin-left: 0px;
-	}
-	.card-deck .card:not(:first-child) {
-		margin-left: 0px;
+		/*margin-left: 0px;*/
 	}
 }
-
 
 /*.bd-example-container-body {
   height: 8rem;
