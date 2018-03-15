@@ -130,7 +130,7 @@
 				// set new stringified cart into local storage 
 				localStorage.setItem('cart', jsonStr);
 
-				$(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
+				// $(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
 			});
 		},
 		cart: function(){

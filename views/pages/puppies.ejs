@@ -9,7 +9,8 @@
     <% include ../partials/header %>
 </header>
 
-<div class="container">
+<div class="container products mt-4">
+	<h1 class="page-title mb-3">Products</h1>
 	<% photos.forEach(function(photos){ %>
 	<div class="product-info">
 		<div class="product-links">
@@ -25,14 +26,15 @@
 			<li class="puppy-price">Price: $<strong><%= photos.likes %></strong></li>
 			<a href="<%= photos.urls.thumb %>" class="puppy-image d-none"></a>
 			<a href="<%= photos.urls.regular %>" class="modal-img d-none"></a>
+			<div class="add-to-cart"><i class="lnr lnr-lg lnr-cart"></i></div>
 		</ul>
-		<button type="button" class="btn btn-info add-to-cart">Add to cart</button>
 	</div>
 	<% }) %>
-
+</div>
+<div class="products">
 	<!-- pagination -->
 	<% if (pageCount > 1) { %>  
-		<ul class="pagination">  
+		<ul class="pagination mb-0">  
 			<% if (currentPage > 1) { %>
 				<li><a href="/puppies?page=1">&laquo;</a></li>
 			<% } %>
