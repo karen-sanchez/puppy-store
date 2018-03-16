@@ -82,10 +82,29 @@
 
 /* PRODUCTS  */
 
+.product-info * {
+	letter-spacing: 1px;
+	max-width: 300px;
+}
+.product-links .add-to-cart i {
+	background-color: #f2f3fa;
+	color: #487fff;
+	border-radius: 25px;
+	padding: 7px;
+	position: relative;
+	top: 1.5em;
+	margin: 5px;
+}
+.product-links .add-to-cart i:hover {
+	background-color: #487fff;
+	color: #f2f3fa;
+	cursor: pointer;
+}
 .product-info ul {
 	padding-left: 0px;
 	background-color: #f2f3fa;
 	max-width: 300px;
+	padding: 1em;
 }
 .product-info ul li {
 	list-style-type: none;
@@ -93,6 +112,13 @@
 .products .pagination {
 	background-color: #f2f3fa;
 	padding: 1em 0em;
+	font-size: 1.3em;
+	letter-spacing: 1.3px;
+	color: #487fff;
+}
+.list-inline {
+  display: flex;
+  justify-content: center;
 }
 
 /*  SIDENAV  */
