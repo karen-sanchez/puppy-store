@@ -9,20 +9,24 @@
     <% include ../partials/header %>
 </header>
 
-<div class="container">
+<div class="container cart-page">
 
-	<h1>Cart</h1>
-	<button type="button" class="btn btn-danger empty-cart">Empty cart</button><hr />
-	<table id="cart-table" style="width:100%">
-		<tr>
-			<th>Product title</th>
-			<th>Product image</th>
-			<th>Product price</th>
-			<th>Remove item</th>
-		</tr>
-	</table>
-	<h1 id="cart-total">TOTAL: $ </h1>
-	<a class="checkout-link nav-link" href="/checkout">Checkout</a>
+	<h1 class="page-title mb-3">Cart</h1>
+	<div class="jumbotron mx-auto">
+		<div class="mx-auto" style="width: 600px;">
+			<div id="cart-table"></div>
+		</div>
+		<!-- empty cart -->
+		<div class="text-center mt-5">
+			<button type="button" class="btn btn-secondary empty-cart">Empty cart</button>
+		</div>
+	</div>
+	<!-- procees to checkout -->
+	<div class="text-right mb-5">
+		<h3 id="cart-total">TOTAL: $ </h3>
+		<a href="/checkout"><button type="button" class="btn btn-lg btn-custom">Checkout</button></a>
+		<!-- <a class="checkout-link nav-link" href="/checkout">Checkout</a> -->
+	</div>
 </div>
 
 <footer>

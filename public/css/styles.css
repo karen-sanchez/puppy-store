@@ -70,6 +70,21 @@
 	background-image: url('../images/img3.jpg');
 }
 
+/* Set width to make card deck cards 100% width */
+@media (max-width: 800px) { 
+	.workflow-section .card-deck {
+		display: block;
+		width: 100%;
+		margin-bottom: .75rem;
+	}
+	.workflow-section .card-deck .card {
+		display: block;
+		margin-bottom: .75rem;
+		vertical-align: top;
+	}
+}
+
+
 /*	REVIEWS SECTION  */
 
 .reviews.jumbotron-fluid {
@@ -91,9 +106,14 @@
 	color: #487fff;
 	border-radius: 25px;
 	padding: 7px;
-	position: relative;
-	top: 1.5em;
-	margin: 5px;
+	position: absolute;
+	top: 5px;
+	left: 8.5em;
+}
+.products .card {
+	border: none;
+	max-width: 302px;
+	min-width: 300px;
 }
 .product-links .add-to-cart i:hover {
 	background-color: #487fff;
@@ -102,7 +122,8 @@
 }
 .product-info ul {
 	padding-left: 0px;
-	background-color: #f2f3fa;
+	background-color: #487fff;
+	color: #f2f3fa;
 	max-width: 300px;
 	padding: 1em;
 }
@@ -117,8 +138,36 @@
 	color: #487fff;
 }
 .list-inline {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
+}
+.products .card-columns {
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count: 1;
+}
+
+@media (min-width: 770px) {
+	.products .card-columns {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+
+@media (min-width: 950px) {
+	.products .card-columns {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
+}
+
+@media(min-width: 576px){
+	.products .card-columns .card {
+		display: inline-block;
+		width: auto !important;
+	}
 }
 
 /*  SIDENAV  */
@@ -162,6 +211,13 @@
   .sidenav a {font-size: 18px;}
 }
 
+/*	CART  */
+
+.cart-page .jumbotron {
+	background-color: #f2f3fa;
+}
+.cart-page .remove-item { color:  #313638; }
+
 /*  FOOTER  */
 
 .page-footer { 	background-color: #313638; }
@@ -169,29 +225,6 @@
 	color: #ecf3f6;
 	font-family: 'Quicksand', sans-serif;
 }
-
-/* Set width to make card deck cards 100% width */
-
-@media (max-width: 800px) { 
-	.card-deck {
-		display: block;
-		width: 100%;
-		margin-bottom: .75rem;
-	}
-	.card-deck .card {
-		display: block;
-		margin-bottom: .75rem;
-		vertical-align: top;
-		/*margin-left: 0px;*/
-	}
-}
-
-/*.bd-example-container-body {
-  height: 8rem;
-  margin-right: 4.5rem;
-  background-color: #957bbe;
-  border-radius: .25rem;
-}*/
 
 .overlay {
   display: block;

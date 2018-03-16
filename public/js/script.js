@@ -70,13 +70,7 @@
 			$('.sidenav').width('0px');
 		},
 		productsPage: function() {
-			// wrap a 'row' class to every 3rd puppyProduct batch
-			for(var i = 0; i < this.$puppyProduct.length; i+=3) {
-				this.$puppyProduct.slice(i, i+3).wrapAll('<div class="row"></div>');
-			};
-
-			this.$puppyProduct.parent().parent().find('.row').after('<hr>')
-			this.$puppyProduct.addClass('col-sm');
+			this.$puppyProduct.addClass('card');
 
 			// appending author-credit codes to each profile link
 			$('.author-credit').each(function(){
@@ -147,10 +141,10 @@
 				var	productName = value.item,
 					productPrice = value.price,
 					productImage = value.image,
-					cartProducts = '<tr><td class="product-name">' + productName + '</td>' +
-									'<td class="product-image"><img src="' + productImage + '" style="height: 70px;"></td>' +
-						  			'<td class="product-price">' + productPrice + '</td>' +
-						  			'<td><button type="button" class="btn btn-link remove-item" data-clicked="false">Remove</button></td></tr>';
+					cartProducts = '<div class="item-column row mt-5 mb-5"><div class="col"><div class="product-image"><img src="' + productImage + '" style="height: 150px;"></div></div>' +
+									'<div class="col my-auto"><h4 class="product-name">' + productName + '</h4>' +
+						  			'<h4 class="product-price">Price: $' + productPrice + '</h4></div>' +
+						  			'<div class="col my-auto text-right"><button type="button" class="btn btn-lg btn-link remove-item" data-clicked="false">Remove</button></div></div>';
 
 					priceHolder.push(productPrice);
 					$('#cart-table').append(cartProducts);
@@ -158,7 +152,7 @@
 
 			// if remove item link is clicked, reset local storage item to new array
 			$('.remove-item').on('click', function(){
-				var itemName = $(this).closest('tr').find('.product-name').html(),
+				var itemName = $(this).closest('.item-column').find('.product-name').html(),
 					clicked = true,
 					removeSingleItem = cartObj.filter(function(el) {
 						return el.item !== itemName;
@@ -167,7 +161,7 @@
 				if (clicked === true){
 					cart = removeSingleItem;
 
-					$(this).closest('tr').remove();
+					$(this).closest('.item-column').remove();
 					window.location.reload();
 					localStorage.setItem('cart', JSON.stringify(cart));
 				}
@@ -191,7 +185,7 @@
 			};
 		},
 		emptyCart: function() {
-			$('#cart-table tr:nth-child(1)').nextAll().remove();
+			$('#cart-table').remove();
 			$('#cart-total').empty();
 			localStorage.clear();
 		},
