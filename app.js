@@ -26,7 +26,7 @@ app.get('/puppies', function(req, res){
 		currentPage = +req.query.page;
 	};
 
-	unsplash.searchPhotos('puppies', null, currentPage, 9, function(error, photos, link) {
+	unsplash.searchPhotos('puppies', null, currentPage, 15, function(error, photos, link) {
 		res.render('pages/puppies', {
 			photos: photos,
 			link: link,
