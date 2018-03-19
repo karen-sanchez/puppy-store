@@ -35,7 +35,7 @@
 					imgCredit = $(this).find('.imgAuthor').html(),
 					imgFname = $(this).find('.credit-fname').html(),
 					imgLname = $(this).find('.credit-lname').html(),
-					maxHeight = 2500;
+					maxHeight = 2700;
 
 				if(imgHeight <= maxHeight){
 					picsArray.push(imgSrc);
@@ -61,7 +61,10 @@
 
 			$('.carousel-item').first().addClass('active');
 			$('.carousel-indicators > li').first().addClass('active');
-			$('#puppy-carousel').carousel();
+			// $('#puppy-carousel').carousel();
+			$('#puppy-carousel').carousel({
+				interval: 2500
+			});
 		},
 		openNav: function(){
 			$('.sidenav').width('250px');
@@ -212,6 +215,8 @@
 						postal_code: "#ZIP"
 					}]
 				});
+
+				$('form button').css('color', '#ecf3f6');
 				if ($('#checkoutForm').valid()){
 					$('#checkoutModal').modal('show');
 				};

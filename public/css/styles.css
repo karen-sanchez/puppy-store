@@ -10,6 +10,9 @@
 .btn-custom:hover {
 	background-color: #4072e5;
 }
+.btn-custom:visited {
+	color: red;
+}
 .page-title { color: #313638; }
 
 /*	CAROUSEL + INTRO SECTION  */
@@ -229,9 +232,60 @@
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 1.5px;
 }
-
 .cart-page .item-column p {
 	font-family: 'Quicksand', sans-serif;
+}
+
+/*	CHECKOUT  */
+
+.checkout-page form { padding: 4rem 2rem; }
+.checkout-page legend { color: #b6babb; }
+.checkout-page input {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom-color: #487fff;
+	min-width: 100%;
+}
+.checkout-page label {
+	font-family: 'Quicksand', sans-serif;
+	text-transform: capitalize;
+}
+.checkout-page label.error {
+	color: orangered;
+	font-size: 12px;
+	width: 100%;
+}
+.checkout-page .modal-content {
+	background-color:  #487fff;
+	color: #ecf3f6;
+}
+.checkout-page .modal-header {
+	border-bottom: none;
+}
+.checkout-page span i { color: #ecf3f6; }
+
+@media(min-width: 1000px){
+	.checkout-page input {
+		min-width: 70%;
+	}
+}
+
+/*	OVERRIDING STYLES FOR SMARTYSTREETS PLUGIN  */
+
+.smarty-popup {
+	font-family: 'Quicksand', sans-serif !important;
+}
+.smarty-choice-alt .smarty-choice-abort, .smarty-choice-override {
+	background-color: #487fff !important;
+}
+.smarty-popup-invalid-header { 
+	color: orangered !important;
+	font-family: 'Quicksand', sans-serif !important;
+}
+.smarty-popup-missing-input-header { 
+	color: #313638 !important;
+	font-family: 'Quicksand', sans-serif !important;
 }
 
 /*  FOOTER  */
