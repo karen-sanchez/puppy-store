@@ -141,11 +141,10 @@
 				var	productName = value.item,
 					productPrice = value.price,
 					productImage = value.image,
-					cartProducts = '<div class="item-column row mt-5 mb-5"><div class="col"><div class="product-image"><img src="' + productImage + '" style="height: 150px;"></div></div>' +
-									'<div class="col my-auto"><h4 class="product-name">' + productName + '</h4>' +
-						  			'<h4 class="product-price">Price: $' + productPrice + '</h4></div>' +
-						  			'<div class="col my-auto text-right"><button type="button" class="btn btn-lg btn-link remove-item" data-clicked="false">Remove</button></div></div>';
-
+					cartProducts = '<div class="item-column row pt-3 pb-3"><div class="col-12 col-sm-6 col-md-4 text-center"><div class="product-image"><img src="' + productImage + '" style="height: 150px;"></div></div>' +
+									'<div class="col-12 col-sm-6 col-md-4 my-auto text-center pt-3"><p class="product-name">' + productName + '</p>' +
+						  			'<p class="product-price">Price: $' + productPrice + '</p></div>' +
+						  			'<div class="col my-auto text-center pt-3"><i class="lnr lnr-md lnr-trash remove-item" data-clicked="false"></i></div></div>';
 					priceHolder.push(productPrice);
 					$('#cart-table').append(cartProducts);
 			});

@@ -216,7 +216,23 @@
 .cart-page .jumbotron {
 	background-color: #f2f3fa;
 }
-.cart-page .remove-item { color:  #313638; }
+.cart-page .remove-item { 
+	color:  red;
+	border-radius: 30px;
+	padding: 6px;
+	cursor: pointer;
+}
+.cart-page .item-column:nth-child(odd){
+	background-color: #f2f3fa;
+}
+ .empty-cart {
+	font-family: 'Quicksand', sans-serif;
+	letter-spacing: 1.5px;
+}
+
+.cart-page .item-column p {
+	font-family: 'Quicksand', sans-serif;
+}
 
 /*  FOOTER  */
 
@@ -225,6 +241,8 @@
 	color: #ecf3f6;
 	font-family: 'Quicksand', sans-serif;
 }
+
+
 
 .overlay {
   display: block;
@@ -242,8 +260,4 @@
   z-index: 3;
   right: 0;
   bottom: 0;
-}
-
-table, th, td {
-    border: 1px solid black;
 }
