@@ -64,11 +64,24 @@
 			$('#puppy-carousel').carousel({
 				interval: 2500
 			});
+
+			// main btn animation
+			$('.btn-custom').hover(
+				function() {
+					$(this).addClass('animated pulse');
+				}, function() {
+					$(this).removeClass('animated pulse');
+				}
+			);
 		},
 		openNav: function(){
+			$('.sidenav').removeClass('animated fadeOutDownBig');
+			$('.sidenav').addClass('animated fadeInDownBig');
 			$('.sidenav').width('250px');
 		},
 		closeNav: function(){
+			$('.sidenav').removeClass('animated fadeInDownBig');
+			$('.sidenav').addClass('animated fadeOutDownBig');
 			$('.sidenav').width('0px');
 		},
 		productsPage: function() {
@@ -147,7 +160,7 @@
 					cartProducts = '<div class="item-column row pt-3 pb-3"><div class="col-12 col-sm-6 col-md-4 text-center"><div class="product-image"><img src="' + productImage + '" style="height: 150px;"></div></div>' +
 									'<div class="col-12 col-sm-6 col-md-4 my-auto text-center pt-3"><p class="product-name">' + productName + '</p>' +
 						  			'<p class="product-price">Price: $' + productPrice + '</p></div>' +
-						  			'<div class="col my-auto text-center pt-3"><i class="lnr lnr-md lnr-trash remove-item" data-clicked="false"></i></div></div>';
+						  			'<div class="col my-auto text-center pt-3 trashcan"><i class="lnr lnr-md lnr-trash remove-item" data-clicked="false"></i></div></div>';
 					priceHolder.push(productPrice);
 					$('#cart-table').append(cartProducts);
 			});
@@ -185,6 +198,14 @@
 			} else {
 				$('#cart-total').append('0');
 			};
+			// trashcan animation
+			$('.trashcan').hover(
+				function() {
+					$(this).addClass('animated bounce');
+				}, function() {
+					$(this).removeClass('animated bounce');
+				}
+			);
 		},
 		emptyCart: function() {
 			$('#cart-table').remove();
@@ -219,12 +240,16 @@
 				$('form button').css('color', '#ecf3f6');
 				if ($('#checkoutForm').valid()){
 					$('#checkoutModal').modal('show');
-				};
+				} else {
+					$('#checkoutModal').addClass('animated lightSpeedIn');
+					$('#checkoutModal').modal('show');
+				}
 				e.preventDefault();
 			});
 
 			// reset form
 			$('.reset-form').click(function(){
+				$('#checkoutModal').addClass('animated lightSpeedOut');
 				$('#checkoutForm').trigger('reset');
 			});
 		},

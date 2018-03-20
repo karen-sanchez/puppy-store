@@ -15,6 +15,10 @@
 	color: red;
 }
 .page-title { color: #313638; }
+.navbar .lnr-menu { 
+	color: #487fff;
+	cursor: pointer;
+}
 
 /*	CAROUSEL + INTRO SECTION  */
 
@@ -221,6 +225,9 @@
 	transition: .5s ease;
 	z-index: 1;
 	position: relative;
+}
+.puppy-modal .modal-content {
+	background-color: transparent;
 }
 
 @media (min-width: 770px) {
