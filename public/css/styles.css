@@ -30,9 +30,9 @@
 }
 .intro {
   padding: 1rem 2rem;
-  opacity: 0.9;
-  background-color: #f2f3fa;
-  width: 80%;
+  /*opacity: 0.9;*/
+  /*background-color: #f2f3fa;*/
+  width: 100%;
 }
 .carousel{
 	max-width: 400px !important;
@@ -228,8 +228,19 @@
 }
 .puppy-modal .modal-content {
 	background-color: transparent;
+	border: none;
 }
-
+.puppy-modal .close {
+	color: #487fff;
+	opacity: 1;
+	text-shadow: none;
+	position: absolute;
+	right: 0px;
+	background-color: white;
+	border-radius: 25px;
+	opacity: 0.7;
+	margin: 5px 5px 0px 0px;
+}
 @media (min-width: 770px) {
 	.products .card-columns {
 		-webkit-column-count: 2;
