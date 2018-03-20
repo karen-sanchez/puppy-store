@@ -6,6 +6,7 @@
 	color: #ecf3f6;
 	font-family: 'Quicksand', sans-serif;
 	letter-spacing: 1.5px;
+	box-shadow: 0 9px #313638;
 }
 .btn-custom:hover {
 	background-color: #4072e5;
@@ -35,15 +36,24 @@
 .homepage-carousel .carousel-item {
 	width: 400px;
 }
-
+.homepage-carousel .carousel-caption a { 
+	color: #f2f3fa; 
+	font-family: 'Quicksand', sans-serif;
+}
+.homepage-carousel .carousel-caption{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #313638;
+	opacity: 0.5;
+	font-family: 'Quicksand', sans-serif;
+}
 @media (min-width: 576px) { 
 	.intro-jumbo {
 		padding-top: 6em;
 		padding-bottom: 6em;
 	}
 	.carousel{
-		max-width: 100% !important;
-		/*left: 15%;*/
+		/*max-width: 100% !important;*/
 	}
 }
 
@@ -72,6 +82,25 @@
 .workflow-section .third-card.card-body {
 	background-image: url('../images/img3.jpg');
 }
+.workflow-section .card-custom-bg {
+	background-color: #ecf3f6;
+	padding: 3em 2em;
+	opacity: 0.9;
+	height: 200px;
+	color: #313638;
+	font-family: 'Quicksand', sans-serif;
+}
+
+@media (min-width: 801px) { 
+	.workflow-section .card-custom-bg {
+		padding: 1em 1em;
+	}
+}
+@media (min-width: 991px) { 
+	.workflow-section .card-custom-bg {
+		padding: 3em 2em;
+	}
+}
 
 /* Set width to make card deck cards 100% width */
 @media (max-width: 800px) { 
@@ -87,7 +116,6 @@
 	}
 }
 
-
 /*	REVIEWS SECTION  */
 
 .reviews.jumbotron-fluid {
@@ -97,6 +125,18 @@
 .reviews .card-text { font-family: 'Quicksand', sans-serif; }
 .reviews .card-body { background-color: #f2f3fa; }
 .reviews .card { border: none; }
+.reviews .lnr-heart { color: #487fff; }
+
+@media(min-width: 576px){
+	.reviews .card-body { 
+		padding: 0px;
+	}
+}
+@media(min-width: 950px){
+	.reviews .card-body { 
+		padding: 1.25rem;
+	}
+}
 
 /* PRODUCTS  */
 
@@ -104,7 +144,7 @@
 	letter-spacing: 1px;
 	max-width: 300px;
 }
-.product-links .add-to-cart i {
+.product-links .cart-btn i {
 	background-color: #f2f3fa;
 	color: #487fff;
 	border-radius: 25px;
@@ -112,16 +152,29 @@
 	position: absolute;
 	top: 5px;
 	left: 8.5em;
+	box-shadow: 0 4px #487fff;
+}
+.product-links .cart-btn i:hover {
+	background-color: #487fff;
+	color: #f2f3fa;
+	cursor: pointer;
+	box-shadow: 0 4px #ecf3f6;
+}
+.product-links .cart-btn i:active {
+	background-color: #487fff;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+	box-shadow: 0 4px #ecf3f6;
+}
+.added-to-cart {
+	background-color: #487fff !important;
+	color: #f2f3fa !important;
+	box-shadow: 0 4px #ecf3f6 !important;
 }
 .products .card {
 	border: none;
 	max-width: 302px;
 	min-width: 300px;
-}
-.product-links .add-to-cart i:hover {
-	background-color: #487fff;
-	color: #f2f3fa;
-	cursor: pointer;
 }
 .product-info ul {
 	padding-left: 0px;
@@ -148,6 +201,26 @@
 	-webkit-column-count: 1;
 	-moz-column-count: 1;
 	column-count: 1;
+}
+.products .photographer-account a{
+	position: absolute;
+	color: hsla(0,0%,100%,.8);
+	width: 100%;
+	z-index: 3;
+	right: 0;
+	bottom: 0;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 700;
+	background-color: #313638;
+	opacity: 0.5;
+}
+.products .overlay {
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	z-index: 1;
+	position: relative;
 }
 
 @media (min-width: 770px) {
@@ -189,10 +262,10 @@
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 10px 8px 10px 32px;
     text-decoration: none;
-    font-size: 25px;
-    color: #ecf3f6;
+    font-size: 40px;
+    color: #313638;
     display: block;
     transition: 0.3s;
 }
@@ -295,23 +368,12 @@
 	color: #ecf3f6;
 	font-family: 'Quicksand', sans-serif;
 }
-
-
-
-.overlay {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  z-index: 1;
-  position: relative;
+.page-footer img {
+	height: 15px;
+	width: 20px;
+	margin-bottom: 7px;
 }
-
-.photographer-account a{
-  position: absolute;
-  color: hsla(0,0%,100%,.8);
-  width: 100%;
-  z-index: 3;
-  right: 0;
-  bottom: 0;
+.page-footer a:hover {
+	color: grey;
+	text-decoration: none;
 }

@@ -35,7 +35,7 @@
 					imgCredit = $(this).find('.imgAuthor').html(),
 					imgFname = $(this).find('.credit-fname').html(),
 					imgLname = $(this).find('.credit-lname').html(),
-					maxHeight = 2700;
+					maxHeight = 2500;
 
 				if(imgHeight <= maxHeight){
 					picsArray.push(imgSrc);
@@ -50,7 +50,7 @@
 				var image = '<div class="carousel-item">' +
 							'<img src=" '+ picsArray[i] +' ">' +
 							'<div class="carousel-caption">' +
-							'<p>Photo by: </p><a href="'+ imgCreditArray[i] + utm +'">'+ imgFnameArray[i] + ' ' + imgLnameArray[i] +'</a>'+
+							'Photo by: <a href="'+ imgCreditArray[i] + utm +'">'+ imgFnameArray[i] + ' ' + imgLnameArray[i] +'</a>'+
 							'</div>'+
 							'</div>',
 					indicators = '<li data-target="#puppy-carousel" data-slide-to="'+i+'"></li>';
@@ -61,7 +61,6 @@
 
 			$('.carousel-item').first().addClass('active');
 			$('.carousel-indicators > li').first().addClass('active');
-			// $('#puppy-carousel').carousel();
 			$('#puppy-carousel').carousel({
 				interval: 2500
 			});
@@ -127,7 +126,8 @@
 				// set new stringified cart into local storage 
 				localStorage.setItem('cart', jsonStr);
 
-				// $(this).text($(this).text() == 'Remove from cart' ? 'Add to cart' : 'Remove from cart');
+				// add blue background to cart icon once product is added to cart
+				$(this).find('i').addClass('added-to-cart');
 			});
 		},
 		cart: function(){
