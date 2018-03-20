@@ -54,6 +54,7 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); /
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
-app.listen(3000, function(){
-	console.log('Server running on 3000')
+
+app.listen((process.env.PORT || 3000), function(){
+  console.log('listening on *:3000');
 });
