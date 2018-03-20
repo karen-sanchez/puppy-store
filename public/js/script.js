@@ -96,15 +96,21 @@
 			});
 
 			// on hover display photographer name
-			$('.product-links').hover(
-				function() {
-					$(this).addClass('overlay');
-					$(this).find('.photographer-account').removeClass('d-none');
-				}, function() {
-					$(this).removeClass('ovelay');
-					$(this).find('.photographer-account').addClass('d-none');
-				}
-			);
+			if ($(w).width() <= 800){
+				$('.product-links').addClass('overlay');
+				$('.product-links').find('.photographer-account').removeClass('d-none');
+
+			} else {
+				$('.product-links').hover(
+					function() {
+						$(this).addClass('overlay');
+						$(this).find('.photographer-account').removeClass('d-none');
+					}, function() {
+						$(this).removeClass('ovelay');
+						$(this).find('.photographer-account').addClass('d-none');
+					}
+				);
+			}
 		},
 		productsModal: function(){
 			// get new image src from click event
