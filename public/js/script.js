@@ -110,6 +110,22 @@
 					}
 				);
 			};
+
+			// back to top
+			$(w).scroll(function () {
+				if ($(this).scrollTop() > 1000) {
+					$('.back-to-top').fadeIn();
+				} else {
+					$('.back-to-top').fadeOut();
+				}
+			});
+
+			$('.back-to-top').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 1800);
+				return false;
+			});
 		},
 		productsModal: function(){
 			// get new image src from click event
