@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var unsplash = require('unsplash-api');
 var dotenv = require('dotenv').load();
-var port_number = server.listen(process.env.PORT || 3000);
+var port = process.env.PORT || 8080;
 
 var clientId = process.env.clientId;
 unsplash.init(clientId);
@@ -55,4 +55,6 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); /
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
-app.listen(port_number);
+app.listen(port, function() {
+	console.log('Our app is running on http://localhost:' + port);
+});
