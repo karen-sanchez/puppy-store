@@ -52,18 +52,18 @@
 				</div>
 				<div class="col-12 col-sm-6">
 					<label for="ZIP">ZIP</label><br>
-					<input type="text" id="ZIP" name="ZIP">
+					<input type="text" id="ZIP" name="ZIP" pattern="[0-9]*">
 				</div>
 			</div>
 			<legend  class="mt-5 mb-3">Payment information</legend>
 			<div class="row">
 				<div class="col-12 col-sm-6">
 					<label for="cc">credit card</label><br>
-					<input id="cc" name="cc" required></input>
+					<input id="cc" name="cc" pattern="[0-9]*" required></input>
 				</div>
 				<div class="col-12 col-sm-6">
 					<label for="exp">exp. date</label><br>
-					<input id="exp" name="exp" required></input>
+					<input id="exp" name="exp" pattern="[0-9]*" required></input>
 				</div>
 			</div>
 			<div class="text-right mb-5 mt-5">
