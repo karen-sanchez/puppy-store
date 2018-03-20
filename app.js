@@ -4,7 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var unsplash = require('unsplash-api');
 var dotenv = require('dotenv').load();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 var clientId = process.env.clientId;
 unsplash.init(clientId);
