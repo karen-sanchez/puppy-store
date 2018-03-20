@@ -95,11 +95,10 @@
 					$(this).children().attr('href', newUrl);
 			});
 
-			// on hover display photographer name
+			// on mobile remove hover function to allow for one-tap add-to-cart and one-tap trigger modal
 			if ($(w).width() <= 800){
 				$('.product-links').addClass('overlay');
 				$('.product-links').find('.photographer-account').removeClass('d-none');
-
 			} else {
 				$('.product-links').hover(
 					function() {
@@ -110,7 +109,7 @@
 						$(this).find('.photographer-account').addClass('d-none');
 					}
 				);
-			}
+			};
 		},
 		productsModal: function(){
 			// get new image src from click event

@@ -130,10 +130,14 @@
 .reviews .card-body { background-color: #f2f3fa; }
 .reviews .card { border: none; }
 .reviews .lnr-heart { color: #487fff; }
+.reviews .title { font-size: 1.5rem; }
 
 @media(min-width: 576px){
 	.reviews .card-body { 
 		padding: 0px;
+	}
+	.reviews .title {
+		font-size: 1.75rem !important;
 	}
 }
 @media(min-width: 950px){
