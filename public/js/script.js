@@ -219,7 +219,25 @@
 				$('#checkout-total').append(cartTotalObj);
 
 			// form validation
-			$('#checkoutForm').validate();
+			$('#checkoutForm').validate({
+				rules: {
+					number: {
+						required: true,
+						number: true,
+						maxlength: 10
+					},
+					cc: {
+						required: true,
+						number: true,
+						maxlength: 15
+					},
+					exp: {
+						required: true,
+						number: true,
+						maxlength: 4
+					}
+				}
+			});
 
 			$('#checkoutForm').submit(function(e){
 				// location autocomplete
@@ -239,11 +257,9 @@
 
 				$('form button').css('color', '#ecf3f6');
 				if ($('#checkoutForm').valid()){
-					$('#checkoutModal').modal('show');
-				} else {
 					$('#checkoutModal').addClass('animated lightSpeedIn');
 					$('#checkoutModal').modal('show');
-				}
+				};
 				e.preventDefault();
 			});
 
@@ -251,6 +267,7 @@
 			$('.reset-form').click(function(){
 				$('#checkoutModal').addClass('animated lightSpeedOut');
 				$('#checkoutForm').trigger('reset');
+				location.reload();
 			});
 		},
 		// private methods
