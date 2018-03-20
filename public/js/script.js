@@ -16,7 +16,7 @@
 		},
 		bindEvents: function(){
 			// binding events in modular js changes the 'this' context
-			$('.modal-btn').on('touchstart', this.productsModal);
+			$('.modal-btn').on('click', this.productsModal);
 			$('.empty-cart').on('click', this.emptyCart);
 			$('.open-sidenav').on('click', this.openNav);
 			$('.closebtn').on('click', this.closeNav);
