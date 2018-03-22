@@ -19,7 +19,6 @@
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
 			$('.empty-cart').on('click', this.emptyCart);
-			$('.closebtn').on('click', this.closeNav);
 		},
 		global: function() {
 			// main btn animation
@@ -91,11 +90,6 @@
 			$('#puppy-carousel').carousel({
 				interval: 2500
 			});
-		},
-		closeNav: function(){
-			$('.sidenav').removeClass('fadeInDownBig');
-			$('.sidenav').addClass('fadeOutDownBig');
-			$('.sidenav').removeClass('open');
 		},
 		productsPage: function() {
 			this.$puppyProduct.addClass('card');

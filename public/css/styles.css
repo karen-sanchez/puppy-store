@@ -53,6 +53,9 @@
 .homepage-carousel .carousel-item {
 	width: 400px;
 }
+.homepage-carousel .carousel-item img {
+	max-height: 260px;
+}
 .homepage-carousel .carousel-caption a { 
 	color: #f2f3fa; 
 	font-family: 'Quicksand', sans-serif;
