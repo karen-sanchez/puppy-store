@@ -351,7 +351,6 @@
 
 /*	CHECKOUT  */
 
-.checkout-page form { padding: 4rem 2rem; }
 .checkout-page legend { color: #487fff; }
 .checkout-page input {
 	border: 1px solid #d1d7db;
@@ -379,6 +378,10 @@
 	border-bottom: none;
 }
 .checkout-page span i { color: #ecf3f6; }
+
+@media (min-width: 800px){
+	.checkout-page form { padding: 4rem 2rem; }
+}
 
 @media(min-width: 1000px){
 	.checkout-page input {
