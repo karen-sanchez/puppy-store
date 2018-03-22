@@ -3,6 +3,7 @@
 	var PS = {
 		init: function(){
 			this.cacheDOM();
+			this.global();
 			this.homepage();
 			this.productsPage();
 			this.addToCart();
@@ -18,8 +19,34 @@
 			// binding events in modular js changes the 'this' context
 			$('.modal-btn').on('click', this.productsModal);
 			$('.empty-cart').on('click', this.emptyCart);
-			$('.open-sidenav').on('click', this.openNav);
 			$('.closebtn').on('click', this.closeNav);
+		},
+		global: function() {
+			// main btn animation
+			$('.btn-custom').hover(
+				function() {
+					$(this).addClass('animated pulse');
+				}, function() {
+					$(this).removeClass('animated pulse');
+				}
+			);
+
+			// open/close nav with same btn
+			$('.nav .lnr-menu').click(function() {
+				var findSideNav = $(d).find('.sidenav');
+		
+				if ( $('.sidenav').hasClass('open') ){
+					$(this).removeClass('lnr-cross');
+					$(this).addClass('lnr-menu');
+					$(findSideNav).removeClass('open fadeInDownBig');
+					$(findSideNav).addClass('fadeOutDownBig');
+				} else {
+					$(findSideNav).addClass('open fadeInDownBig');
+					$(findSideNav).removeClass('fadeOutDownBig');
+					$(this).removeClass('lnr-menu');
+					$(this).addClass('lnr-cross');
+				};
+			});
 		},
 		homepage: function() {
 			var picsArray = [],
@@ -64,25 +91,11 @@
 			$('#puppy-carousel').carousel({
 				interval: 2500
 			});
-
-			// main btn animation
-			$('.btn-custom').hover(
-				function() {
-					$(this).addClass('animated pulse');
-				}, function() {
-					$(this).removeClass('animated pulse');
-				}
-			);
-		},
-		openNav: function(){
-			$('.sidenav').removeClass('animated fadeOutDownBig');
-			$('.sidenav').addClass('animated fadeInDownBig');
-			$('.sidenav').width('250px');
 		},
 		closeNav: function(){
-			$('.sidenav').removeClass('animated fadeInDownBig');
-			$('.sidenav').addClass('animated fadeOutDownBig');
-			$('.sidenav').width('0px');
+			$('.sidenav').removeClass('fadeInDownBig');
+			$('.sidenav').addClass('fadeOutDownBig');
+			$('.sidenav').removeClass('open');
 		},
 		productsPage: function() {
 			this.$puppyProduct.addClass('card');

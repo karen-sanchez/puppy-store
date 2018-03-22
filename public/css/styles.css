@@ -15,7 +15,7 @@
 	color: red;
 }
 .page-title { color: #313638; }
-.navbar .lnr-menu { 
+.navbar i { 
 	color: #487fff;
 	cursor: pointer;
 }
@@ -317,6 +317,8 @@
     margin-left: 50px;
 }
 
+.open { width: 250px; }
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -347,17 +349,19 @@
 /*	CHECKOUT  */
 
 .checkout-page form { padding: 4rem 2rem; }
-.checkout-page legend { color: #b6babb; }
+.checkout-page legend { color: #487fff; }
 .checkout-page input {
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom-color: #487fff;
+	border: 1px solid #d1d7db;
+	height: 45px;
 	min-width: 100%;
+	font-size: 25px;
+	font-family: 'Quicksand', sans-serif;
 }
 .checkout-page label {
 	font-family: 'Quicksand', sans-serif;
 	text-transform: capitalize;
+	font-size: 15px;
+	margin-bottom: 0px;
 }
 .checkout-page label.error {
 	color: orangered;
