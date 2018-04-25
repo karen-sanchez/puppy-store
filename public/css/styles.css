@@ -205,7 +205,7 @@
 	max-width: 300px;
 }
 
-.product-links .cart-btn i {
+.product-links .lnr-cart {
 	background-color: #f2f3fa;
 	color: #487fff;
 	border-radius: 25px;
@@ -216,19 +216,19 @@
 	box-shadow: 0 4px #487fff;
 }
 
-.product-links .cart-btn i:hover {
+.product-links .lnr-cart:hover {
 	background-color: #487fff;
 	color: #f2f3fa;
 	cursor: pointer;
 	box-shadow: 0 4px #ecf3f6;
 }
 
-.product-links .cart-btn i:active {
+/*.product-links i:active {
 	background-color: #487fff;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
 	box-shadow: 0 4px #ecf3f6;
-}
+}*/
 
 .added-to-cart {
 	background-color: #487fff !important;

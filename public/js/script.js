@@ -151,10 +151,13 @@
 				cart = [];
 			}
 
-			$('.add-to-cart').on('click', function(){
+			$('.lnr-cart').on('click', function(){
+
 				var productName = $(this).closest('.product-info').find('.puppy-name').find('strong').text(),
 					productImage = $(this).closest('.product-info').find('.puppy-image').attr('href'),
 					productPrice = $(this).closest('.product-info').find('.puppy-price').find('strong').text();
+
+					console.log(productName)
 
 				cart.push({
 					item: productName,
@@ -164,11 +167,13 @@
 
 				// stringify cart objects to be pushed into local storage
 				var jsonStr = JSON.stringify(cart);
+				console.log(jsonStr)
 				// set new stringified cart into local storage 
 				localStorage.setItem('cart', jsonStr);
 
 				// add blue background to cart icon once product is added to cart
-				$(this).find('i').addClass('added-to-cart');
+				console.log($(this))
+				$(this).addClass('added-to-cart');
 			});
 		},
 		cart: function(){
@@ -226,14 +231,6 @@
 			} else {
 				$('#cart-total').append('0');
 			};
-			// trashcan animation
-			$('.trashcan').hover(
-				function() {
-					$(this).addClass('animated bounce');
-				}, function() {
-					$(this).removeClass('animated bounce');
-				}
-			);
 		},
 		emptyCart: function() {
 			$('#cart-table').remove();
